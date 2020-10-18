@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-  @ObservedObject var teamStore = TeamStore()
+  @StateObject private var teamStore = TeamStore()
   
   @State private var showingAddTeamModal = false
   
