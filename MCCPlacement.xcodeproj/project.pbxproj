@@ -13,6 +13,8 @@
 		9FABA83C253C06C10003E530 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FABA83B253C06C10003E530 /* Preview Assets.xcassets */; };
 		9FABA847253C06C20003E530 /* MCCPlacementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FABA846253C06C20003E530 /* MCCPlacementTests.swift */; };
 		9FABA852253C06C20003E530 /* MCCPlacementUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FABA851253C06C20003E530 /* MCCPlacementUITests.swift */; };
+		9FABA863253C06FA0003E530 /* Predictor.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9FABA862253C06FA0003E530 /* Predictor.mlmodel */; };
+		9FE6AD12253C9F750081B193 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE6AD11253C9F750081B193 /* Team.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		9FABA84D253C06C20003E530 /* MCCPlacementUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MCCPlacementUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FABA851253C06C20003E530 /* MCCPlacementUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCPlacementUITests.swift; sourceTree = "<group>"; };
 		9FABA853253C06C20003E530 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FABA862253C06FA0003E530 /* Predictor.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Predictor.mlmodel; sourceTree = "<group>"; };
+		9FE6AD11253C9F750081B193 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +101,10 @@
 			children = (
 				9FABA834253C06BF0003E530 /* MCCPlacementApp.swift */,
 				9FABA836253C06BF0003E530 /* ContentView.swift */,
+				9FE6AD11253C9F750081B193 /* Team.swift */,
 				9FABA838253C06C10003E530 /* Assets.xcassets */,
 				9FABA83D253C06C10003E530 /* Info.plist */,
+				9FABA862253C06FA0003E530 /* Predictor.mlmodel */,
 				9FABA83A253C06C10003E530 /* Preview Content */,
 			);
 			path = MCCPlacement;
@@ -259,7 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FE6AD12253C9F750081B193 /* Team.swift in Sources */,
 				9FABA837253C06BF0003E530 /* ContentView.swift in Sources */,
+				9FABA863253C06FA0003E530 /* Predictor.mlmodel in Sources */,
 				9FABA835253C06BF0003E530 /* MCCPlacementApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
