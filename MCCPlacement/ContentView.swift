@@ -29,7 +29,7 @@ struct ContentView: View {
         showingAddTeamModal = true
       }, label: {
         Image(systemName: "plus")
-          .frame(width: 44, height: 44) // Make the tap target larger
+          .frame(width: 16, height: 16) // Make the tap target larger
       })
       .contentShape(Rectangle())
       )
