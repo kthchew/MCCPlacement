@@ -9,25 +9,31 @@ import XCTest
 @testable import MCCPlacement
 
 class MCCPlacementTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+  
+  let sampleTeam = Team(name: "Test", averageScore: 2000.0, averageWins: 0.3, averageTopTen: 0.25)
+  
+  override func setUpWithError() throws {
+    // Put setup code here. This method is called before the invocation of each test method in the class.
+  }
+  
+  override func tearDownWithError() throws {
+    // Put teardown code here. This method is called after the invocation of each test method in the class.
+  }
+  
+  func testTeamJSONRepresentation() throws {
+    let encoder = JSONEncoder()
+    guard let encodedData = try? encoder.encode(sampleTeam) else {
+      XCTFail("Failed to encode the data.")
+      return
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    let decoder = JSONDecoder()
+    guard let decodedData = try? decoder.decode(Team.self, from: encodedData) else {
+      XCTFail("Failed to decode the data.")
+      return
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+    
+    XCTAssertEqual(sampleTeam, decodedData)
+  }
+  
 }
