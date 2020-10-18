@@ -8,55 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
-  /// The mean of the average score of the 4 players in the team.
-  @State private var averageScore = "0.0"
-  /// The mean of the average wins of the 4 players in the team.
-  @State private var averageWins = "0.0"
-  /// The mean of the average times each player was placed in the top 10 of the 4 players in the team.
-  @State private var averageTopTen = "0.0"
+  @ObservedObject var teamStore = TeamStore()
   
-  @State private var alertTitle = "Prediction"
-  @State private var alertMessage = ""
-  @State private var showingAlert = false
+  @State private var showingAddTeamModal = false
   
   var body: some View {
-    Form {
-      Section(header: Text("Average Score")) {
-        TextField("Average Score", text: $averageScore)
-          .keyboardType(.decimalPad)
-        
+    NavigationView {
+      // Known issue: the list only appears on the sidebar in landscape orientation
+      List {
+        ForEach(teamStore.teams) { team in
+          TeamCellView(teamStore: teamStore, team: team)
+        }
+        .onDelete { indexSet in
+          teamStore.teams.remove(atOffsets: indexSet)
+        }
       }
-      
-      Section(header: Text("Average Wins")) {
-        TextField("Average Wins", text: $averageWins)
-          .keyboardType(.decimalPad)
+      .listStyle(InsetListStyle())
+      .navigationBarTitle("MCC Predictor")
+      .navigationBarItems(leading: EditButton(), trailing: Button(action: {
+        showingAddTeamModal = true
+      }, label: {
+        Image(systemName: "plus")
+          .frame(width: 44, height: 44) // Make the tap target larger
+      })
+      .contentShape(Rectangle())
+      )
+      .sheet(isPresented: $showingAddTeamModal) {
+        NavigationView { NewTeamView(teamStore: teamStore) }
       }
-      
-      Section(header: Text("Average Top Ten")) {
-        TextField("Average Top Ten", text: $averageTopTen)
-          .keyboardType(.decimalPad)
-      }
-      
-      Button("Calculate") {
-        predictPlacement(averageScores: Double(averageScore) ?? 0.0, averageWins: Double(averageWins) ?? 0.0, averageTop10: Double(averageTopTen) ?? 0.0)
-      }
-      .alert(isPresented: $showingAlert) {
-        Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-      }
-    }
-  }
-  
-  func predictPlacement(averageScores: Double, averageWins: Double, averageTop10: Double) {
-    Predictor.load { model in
-      do {
-        let prediction = try model.get().prediction(Team_Average_Scores: averageScores, Team_Average_Wins: averageWins, Team_Average_Top_10: averageTop10)
-        alertTitle = "Prediction"
-        alertMessage = "Predicted placement: \(prediction.Position)"
-      } catch {
-        alertTitle = "Error"
-        alertMessage = "Failed to create prediction"
-      }
-      showingAlert = true
     }
   }
 }
@@ -65,5 +44,31 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView()
+  }
+}
+
+struct TeamCellView: View {
+  @ObservedObject var teamStore: TeamStore
+  let team: Team
+  
+  var body: some View {
+    HStack {
+      VStack(alignment: .leading) {
+        Text(team.name)
+          .font(.headline)
+        
+        Group {
+          Text("Average Score: \(team.averageScore, specifier: "%.2f")")
+          Text("Average Wins: \(team.averageWins, specifier: "%.2f")")
+          Text("Average Top 10: \(team.averageTopTen, specifier: "%.2f")")
+        }
+        .font(.caption)
+      }
+      
+      Spacer()
+      
+      Text("#\((teamStore.teams.firstIndex(of: team) ?? -1) + 1)")
+        .padding()
+    }
   }
 }
