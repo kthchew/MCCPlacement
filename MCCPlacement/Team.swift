@@ -25,11 +25,11 @@ struct Team: Codable, Hashable, Identifiable {
       return 0.0
     }
     
-    guard let prediction = try? predictor.prediction(Team_Average_Scores: averageScore, Team_Average_Wins: averageWins, Team_Average_Top_10: averageTopTen) else {
+    guard let prediction = try? predictor.prediction(averageScores: averageScore, averageWins: averageWins, averageTopTen: averageTopTen) else {
       return 0.0
     }
     
-    return prediction.Position
+    return prediction.position
   }
   
   init(name: String, averageScore: Double, averageWins: Double, averageTopTen: Double) {
