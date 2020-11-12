@@ -68,7 +68,6 @@ struct TeamCellView: View {
       Spacer()
       
       Text("#\((teamStore.teams.firstIndex(of: team) ?? -1) + 1)")
-        .padding()
     }
   }
 }
