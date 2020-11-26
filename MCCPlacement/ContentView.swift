@@ -98,9 +98,7 @@ struct TeamList: View {
     #if os(iOS)
     List {
       forEachTeam
-        .onDelete { indexSet in
-          teamStore.teams.remove(atOffsets: indexSet)
-        }
+        .onDelete(perform: deleteTeam)
     }
     .listStyle(InsetListStyle())
     .sheet(isPresented: $showingAddTeamModal) {
@@ -114,11 +112,21 @@ struct TeamList: View {
           NewTeamView(teamStore: teamStore)
         }
     }
-    .onDeleteCommand {
-      if let selection = selection, let index = teamStore.teams.firstIndex(of: selection) {
-        teamStore.teams.remove(at: index)
-      }
-    }
+    .onDeleteCommand(perform: deleteTeam)
     #endif
   }
+  
+  
+  @available(iOS 14.0, *)
+  func deleteTeam(indexSet: IndexSet) {
+    teamStore.teams.remove(atOffsets: indexSet)
+  }
+  
+  @available(macOS 11.0, *)
+  func deleteTeam() {
+    if let selection = selection, let index = teamStore.teams.firstIndex(of: selection) {
+      teamStore.teams.remove(at: index)
+    }
+  }
+  
 }
