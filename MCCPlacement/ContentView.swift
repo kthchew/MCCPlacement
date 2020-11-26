@@ -117,16 +117,18 @@ struct TeamList: View {
   }
   
   
-  @available(iOS 14.0, *)
+  #if os(iOS)
   func deleteTeam(indexSet: IndexSet) {
     teamStore.teams.remove(atOffsets: indexSet)
   }
+  #endif
   
-  @available(macOS 11.0, *)
+  #if os(macOS)
   func deleteTeam() {
     if let selection = selection, let index = teamStore.teams.firstIndex(of: selection) {
       teamStore.teams.remove(at: index)
     }
   }
+  #endif
   
 }
