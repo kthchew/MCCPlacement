@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		9F36CFC4253CC5AC00EF0B79 /* NewTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F36CFC3253CC5AC00EF0B79 /* NewTeamView.swift */; };
+		9F8837F2256F62EF00888BAC /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE6AD11253C9F750081B193 /* Team.swift */; };
+		9F8837F3256F62EF00888BAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FABA836253C06BF0003E530 /* ContentView.swift */; };
+		9F8837F4256F62EF00888BAC /* NewTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F36CFC3253CC5AC00EF0B79 /* NewTeamView.swift */; };
+		9F8837F5256F62EF00888BAC /* Predictor.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9FE79DB5255E022F00037D68 /* Predictor.mlmodel */; };
+		9F8837F6256F62EF00888BAC /* MCCPlacementApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FABA834253C06BF0003E530 /* MCCPlacementApp.swift */; };
+		9F8837F9256F62EF00888BAC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FABA83B253C06C10003E530 /* Preview Assets.xcassets */; };
+		9F8837FA256F62EF00888BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FABA838253C06C10003E530 /* Assets.xcassets */; };
 		9FABA835253C06BF0003E530 /* MCCPlacementApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FABA834253C06BF0003E530 /* MCCPlacementApp.swift */; };
 		9FABA837253C06BF0003E530 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FABA836253C06BF0003E530 /* ContentView.swift */; };
 		9FABA839253C06C10003E530 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FABA838253C06C10003E530 /* Assets.xcassets */; };
@@ -37,7 +44,8 @@
 
 /* Begin PBXFileReference section */
 		9F36CFC3253CC5AC00EF0B79 /* NewTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTeamView.swift; sourceTree = "<group>"; };
-		9FABA831253C06BF0003E530 /* MCCPlacement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCCPlacement.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F8837FF256F62EF00888BAC /* MCCPlacement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCCPlacement.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FABA831253C06BF0003E530 /* MCCPlacement (iOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MCCPlacement (iOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FABA834253C06BF0003E530 /* MCCPlacementApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCPlacementApp.swift; sourceTree = "<group>"; };
 		9FABA836253C06BF0003E530 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9FABA838253C06C10003E530 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,12 +57,20 @@
 		9FABA84D253C06C20003E530 /* MCCPlacementUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MCCPlacementUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FABA851253C06C20003E530 /* MCCPlacementUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCPlacementUITests.swift; sourceTree = "<group>"; };
 		9FABA853253C06C20003E530 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FC275AF256F63FC007136A1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FE6AD11253C9F750081B193 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		9FE79DA3255DFEC800037D68 /* MCCPlacement.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MCCPlacement.entitlements; sourceTree = "<group>"; };
 		9FE79DB5255E022F00037D68 /* Predictor.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Predictor.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9F8837F7256F62EF00888BAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9FABA82E253C06BF0003E530 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -79,10 +95,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F8837E0256F61E800888BAC /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				9FC275AF256F63FC007136A1 /* Info.plist */,
+				9FE79DA3255DFEC800037D68 /* MCCPlacement.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		9F8837E1256F61ED00888BAC /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				9FABA83D253C06C10003E530 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
 		9FABA828253C06BF0003E530 = {
 			isa = PBXGroup;
 			children = (
 				9FABA833253C06BF0003E530 /* MCCPlacement */,
+				9F8837E1256F61ED00888BAC /* iOS */,
+				9F8837E0256F61E800888BAC /* macOS */,
 				9FABA845253C06C20003E530 /* MCCPlacementTests */,
 				9FABA850253C06C20003E530 /* MCCPlacementUITests */,
 				9FABA832253C06BF0003E530 /* Products */,
@@ -92,9 +127,10 @@
 		9FABA832253C06BF0003E530 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9FABA831253C06BF0003E530 /* MCCPlacement.app */,
+				9FABA831253C06BF0003E530 /* MCCPlacement (iOS).app */,
 				9FABA842253C06C20003E530 /* MCCPlacementTests.xctest */,
 				9FABA84D253C06C20003E530 /* MCCPlacementUITests.xctest */,
+				9F8837FF256F62EF00888BAC /* MCCPlacement.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,13 +138,11 @@
 		9FABA833253C06BF0003E530 /* MCCPlacement */ = {
 			isa = PBXGroup;
 			children = (
-				9FE79DA3255DFEC800037D68 /* MCCPlacement.entitlements */,
 				9FABA834253C06BF0003E530 /* MCCPlacementApp.swift */,
 				9FABA836253C06BF0003E530 /* ContentView.swift */,
 				9F36CFC3253CC5AC00EF0B79 /* NewTeamView.swift */,
 				9FE6AD11253C9F750081B193 /* Team.swift */,
 				9FABA838253C06C10003E530 /* Assets.xcassets */,
-				9FABA83D253C06C10003E530 /* Info.plist */,
 				9FE79DB5255E022F00037D68 /* Predictor.mlmodel */,
 				9FABA83A253C06C10003E530 /* Preview Content */,
 			);
@@ -144,9 +178,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9FABA830253C06BF0003E530 /* MCCPlacement */ = {
+		9F8837F0256F62EF00888BAC /* MCCPlacement (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9FABA856253C06C20003E530 /* Build configuration list for PBXNativeTarget "MCCPlacement" */;
+			buildConfigurationList = 9F8837FC256F62EF00888BAC /* Build configuration list for PBXNativeTarget "MCCPlacement (macOS)" */;
+			buildPhases = (
+				9F8837F1256F62EF00888BAC /* Sources */,
+				9F8837F7256F62EF00888BAC /* Frameworks */,
+				9F8837F8256F62EF00888BAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MCCPlacement (macOS)";
+			productName = MCCPlacement;
+			productReference = 9F8837FF256F62EF00888BAC /* MCCPlacement.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9FABA830253C06BF0003E530 /* MCCPlacement (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FABA856253C06C20003E530 /* Build configuration list for PBXNativeTarget "MCCPlacement (iOS)" */;
 			buildPhases = (
 				9FABA82D253C06BF0003E530 /* Sources */,
 				9FABA82E253C06BF0003E530 /* Frameworks */,
@@ -156,9 +207,9 @@
 			);
 			dependencies = (
 			);
-			name = MCCPlacement;
+			name = "MCCPlacement (iOS)";
 			productName = MCCPlacement;
-			productReference = 9FABA831253C06BF0003E530 /* MCCPlacement.app */;
+			productReference = 9FABA831253C06BF0003E530 /* MCCPlacement (iOS).app */;
 			productType = "com.apple.product-type.application";
 		};
 		9FABA841253C06C20003E530 /* MCCPlacementTests */ = {
@@ -232,7 +283,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9FABA830253C06BF0003E530 /* MCCPlacement */,
+				9FABA830253C06BF0003E530 /* MCCPlacement (iOS) */,
+				9F8837F0256F62EF00888BAC /* MCCPlacement (macOS) */,
 				9FABA841253C06C20003E530 /* MCCPlacementTests */,
 				9FABA84C253C06C20003E530 /* MCCPlacementUITests */,
 			);
@@ -240,6 +292,15 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9F8837F8256F62EF00888BAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F8837F9256F62EF00888BAC /* Preview Assets.xcassets in Resources */,
+				9F8837FA256F62EF00888BAC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9FABA82F253C06BF0003E530 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -266,6 +327,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9F8837F1256F62EF00888BAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F8837F2256F62EF00888BAC /* Team.swift in Sources */,
+				9F8837F3256F62EF00888BAC /* ContentView.swift in Sources */,
+				9F8837F4256F62EF00888BAC /* NewTeamView.swift in Sources */,
+				9F8837F5256F62EF00888BAC /* Predictor.mlmodel in Sources */,
+				9F8837F6256F62EF00888BAC /* MCCPlacementApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9FABA82D253C06BF0003E530 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -299,17 +372,69 @@
 /* Begin PBXTargetDependency section */
 		9FABA844253C06C20003E530 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9FABA830253C06BF0003E530 /* MCCPlacement */;
+			target = 9FABA830253C06BF0003E530 /* MCCPlacement (iOS) */;
 			targetProxy = 9FABA843253C06C20003E530 /* PBXContainerItemProxy */;
 		};
 		9FABA84F253C06C20003E530 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9FABA830253C06BF0003E530 /* MCCPlacement */;
+			target = 9FABA830253C06BF0003E530 /* MCCPlacement (iOS) */;
 			targetProxy = 9FABA84E253C06C20003E530 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		9F8837FD256F62EF00888BAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/MCCPlacement.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MCCPlacement/Preview Content\"";
+				DEVELOPMENT_TEAM = YN43D87323;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/macOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.chew.kenneth.MCCPlacement;
+				PRODUCT_NAME = MCCPlacement;
+				SDKROOT = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		9F8837FE256F62EF00888BAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/MCCPlacement.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MCCPlacement/Preview Content\"";
+				DEVELOPMENT_TEAM = YN43D87323;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/macOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.chew.kenneth.MCCPlacement;
+				PRODUCT_NAME = MCCPlacement;
+				SDKROOT = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
 		9FABA854253C06C20003E530 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -431,23 +556,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MCCPlacement/MCCPlacement.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MCCPlacement/Preview Content\"";
 				DEVELOPMENT_TEAM = YN43D87323;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = MCCPlacement/Info.plist;
+				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.chew.kenneth.MCCPlacement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,6";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -456,23 +580,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MCCPlacement/MCCPlacement.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MCCPlacement/Preview Content\"";
 				DEVELOPMENT_TEAM = YN43D87323;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = MCCPlacement/Info.plist;
+				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.chew.kenneth.MCCPlacement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,6";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -563,6 +686,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9F8837FC256F62EF00888BAC /* Build configuration list for PBXNativeTarget "MCCPlacement (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F8837FD256F62EF00888BAC /* Debug */,
+				9F8837FE256F62EF00888BAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9FABA82C253C06BF0003E530 /* Build configuration list for PBXProject "MCCPlacement" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -572,7 +704,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9FABA856253C06C20003E530 /* Build configuration list for PBXNativeTarget "MCCPlacement" */ = {
+		9FABA856253C06C20003E530 /* Build configuration list for PBXNativeTarget "MCCPlacement (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9FABA857253C06C20003E530 /* Debug */,

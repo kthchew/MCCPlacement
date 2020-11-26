@@ -13,30 +13,29 @@ struct ContentView: View {
   @State private var showingAddTeamModal = false
   
   var body: some View {
+    #if os(iOS)
     NavigationView {
       // Known issue: the list only appears on the sidebar in landscape orientation
-      List {
-        ForEach(teamStore.teams) { team in
-          TeamCellView(teamStore: teamStore, team: team)
-        }
-        .onDelete { indexSet in
-          teamStore.teams.remove(atOffsets: indexSet)
-        }
-      }
-      .listStyle(InsetListStyle())
-      .navigationBarTitle("MCC Predictor")
-      .navigationBarItems(leading: EditButton(), trailing: Button(action: {
-        showingAddTeamModal = true
-      }, label: {
-        Image(systemName: "plus")
-          .frame(width: 16, height: 16) // Make the tap target larger
-      })
-      .contentShape(Rectangle())
-      )
-      .sheet(isPresented: $showingAddTeamModal) {
-        NavigationView { NewTeamView(teamStore: teamStore) }
-      }
+      TeamList(teamStore: teamStore, showingAddTeamModal: $showingAddTeamModal)
+        .navigationBarTitle("MCC Predictor")
+        .navigationBarItems(leading: EditButton(), trailing: Button(action: {
+          showingAddTeamModal = true
+        }, label: {
+          Image(systemName: "plus")
+            .padding() // Make the tap target larger
+        })
+        )
     }
+    #else
+    TeamList(teamStore: teamStore, showingAddTeamModal: $showingAddTeamModal)
+      .toolbar {
+        Button(action: {
+          showingAddTeamModal = true
+        }, label: {
+          Image(systemName: "plus")
+        })
+      }
+    #endif
   }
 }
 
@@ -69,5 +68,57 @@ struct TeamCellView: View {
       
       Text("#\((teamStore.teams.firstIndex(of: team) ?? -1) + 1)")
     }
+  }
+}
+
+struct TeamList: View {
+  @ObservedObject var teamStore: TeamStore
+  
+  @Binding var showingAddTeamModal: Bool
+  
+  #if os(macOS)
+  @State private var selection: Team?
+  #endif
+  
+  var body: some View {
+    #if os(iOS)
+    let forEachTeam = ForEach(teamStore.teams) { team in
+      TeamCellView(teamStore: teamStore, team: team)
+    }
+    #else
+    let forEachTeam = ForEach(teamStore.teams) { team in
+      TeamCellView(teamStore: teamStore, team: team)
+        .background(selection == team ? Color.accentColor : nil)
+        .onTapGesture {
+          selection = team
+        }
+    }
+    #endif
+    
+    #if os(iOS)
+    List {
+      forEachTeam
+        .onDelete { indexSet in
+          teamStore.teams.remove(atOffsets: indexSet)
+        }
+    }
+    .listStyle(InsetListStyle())
+    .sheet(isPresented: $showingAddTeamModal) {
+      NavigationView { NewTeamView(teamStore: teamStore) }
+    }
+    
+    #else
+    List(selection: $selection) {
+      forEachTeam
+        .sheet(isPresented: $showingAddTeamModal) {
+          NewTeamView(teamStore: teamStore)
+        }
+    }
+    .onDeleteCommand {
+      if let selection = selection, let index = teamStore.teams.firstIndex(of: selection) {
+        teamStore.teams.remove(at: index)
+      }
+    }
+    #endif
   }
 }
