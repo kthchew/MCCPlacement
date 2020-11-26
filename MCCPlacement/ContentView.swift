@@ -88,7 +88,10 @@ struct TeamList: View {
     #else
     let forEachTeam = ForEach(teamStore.teams) { team in
       TeamCellView(teamStore: teamStore, team: team)
-        .background(selection == team ? Color.accentColor : nil)
+        .padding(.horizontal)
+        .padding(.vertical, 5)
+        .background(selection == team ? Color.accentColor.clipShape(RoundedRectangle(cornerRadius: 10.0)) : nil)
+        .contentShape(Rectangle())
         .onTapGesture {
           selection = team
         }
