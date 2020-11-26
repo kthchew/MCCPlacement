@@ -54,10 +54,12 @@ struct NewTeamView: View {
         Button("Cancel") {
           presentationMode.wrappedValue.dismiss()
         }
+        .keyboardShortcut(.cancelAction)
         
         Spacer()
         
         addButton
+          .keyboardShortcut(.defaultAction)
       }
     }
     .padding()
