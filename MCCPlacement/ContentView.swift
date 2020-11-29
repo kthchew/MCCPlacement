@@ -28,13 +28,6 @@ struct ContentView: View {
     }
     #else
     TeamList(teamStore: teamStore, showingAddTeamModal: $showingAddTeamModal)
-      .toolbar {
-        Button(action: {
-          showingAddTeamModal = true
-        }, label: {
-          Image(systemName: "plus")
-        })
-      }
     #endif
   }
 }
@@ -116,9 +109,23 @@ struct TeamList: View {
         }
     }
     .onDeleteCommand(perform: deleteTeam)
+    .toolbar {
+      Button(action: {
+        deleteTeam()
+      }, label: {
+        Image(systemName: "trash")
+      })
+      .disabled(selection == nil)
+      .keyboardShortcut(.delete, modifiers: [.command])
+      
+      Button(action: {
+        showingAddTeamModal = true
+      }, label: {
+        Image(systemName: "plus")
+      })
+    }
     #endif
   }
-  
   
   #if os(iOS)
   func deleteTeam(indexSet: IndexSet) {
@@ -131,6 +138,7 @@ struct TeamList: View {
     if let selection = selection, let index = teamStore.teams.firstIndex(of: selection) {
       teamStore.teams.remove(at: index)
     }
+    selection = nil // disable the delete button again
   }
   #endif
   

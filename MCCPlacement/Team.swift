@@ -65,4 +65,18 @@ class TeamStore: ObservableObject {
     
     teams = []
   }
+  
+  #if os(iOS)
+  func deleteTeam(indexSet: IndexSet) {
+    teamStore.teams.remove(atOffsets: indexSet)
+  }
+  #endif
+  
+  #if os(macOS)
+  func deleteTeam(_ selection: Team?) {
+    if let selection = selection, let index = teams.firstIndex(of: selection) {
+      teams.remove(at: index)
+    }
+  }
+  #endif
 }
