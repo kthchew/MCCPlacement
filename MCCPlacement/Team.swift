@@ -68,7 +68,7 @@ class TeamStore: ObservableObject {
   
   #if os(iOS)
   func deleteTeam(indexSet: IndexSet) {
-    teamStore.teams.remove(atOffsets: indexSet)
+    teams.remove(atOffsets: indexSet)
   }
   #endif
   
