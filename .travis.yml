@@ -12,6 +12,6 @@ jobs:
       osx_image: xcode12.2
       xcode_project: MCCPlacement.xcodeproj
       xcode_scheme: 'MCCPlacement (macOS)'
-      xcode_destination: platform:macOS
+      xcode_destination: platform=macOS
 
 # install: swift package update # install Swift Package Manager dependencies

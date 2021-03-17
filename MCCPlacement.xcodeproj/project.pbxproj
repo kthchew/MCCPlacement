@@ -20,7 +20,7 @@
 		9FABA839253C06C10003E530 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FABA838253C06C10003E530 /* Assets.xcassets */; };
 		9FABA83C253C06C10003E530 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FABA83B253C06C10003E530 /* Preview Assets.xcassets */; };
 		9FABA847253C06C20003E530 /* MCCPlacementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FABA846253C06C20003E530 /* MCCPlacementTests.swift */; };
-		9FABA852253C06C20003E530 /* MCCPlacementUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FABA851253C06C20003E530 /* MCCPlacementUITests.swift */; };
+		9FABA852253C06C20003E530 /* MCCPlacementiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FABA851253C06C20003E530 /* MCCPlacementiOSUITests.swift */; };
 		9FE6AD12253C9F750081B193 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE6AD11253C9F750081B193 /* Team.swift */; };
 		9FE79DB6255E022F00037D68 /* Predictor.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9FE79DB5255E022F00037D68 /* Predictor.mlmodel */; };
 /* End PBXBuildFile section */
@@ -54,8 +54,8 @@
 		9FABA842253C06C20003E530 /* MCCPlacementTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MCCPlacementTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FABA846253C06C20003E530 /* MCCPlacementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCPlacementTests.swift; sourceTree = "<group>"; };
 		9FABA848253C06C20003E530 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9FABA84D253C06C20003E530 /* MCCPlacementUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MCCPlacementUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9FABA851253C06C20003E530 /* MCCPlacementUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCPlacementUITests.swift; sourceTree = "<group>"; };
+		9FABA84D253C06C20003E530 /* MCCPlacementiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MCCPlacementiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FABA851253C06C20003E530 /* MCCPlacementiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCCPlacementiOSUITests.swift; sourceTree = "<group>"; };
 		9FABA853253C06C20003E530 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FC275AF256F63FC007136A1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FE6AD11253C9F750081B193 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 				9F8837E1256F61ED00888BAC /* iOS */,
 				9F8837E0256F61E800888BAC /* macOS */,
 				9FABA845253C06C20003E530 /* MCCPlacementTests */,
-				9FABA850253C06C20003E530 /* MCCPlacementUITests */,
+				9FABA850253C06C20003E530 /* MCCPlacementiOSUITests */,
 				9FABA832253C06BF0003E530 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -129,7 +129,7 @@
 			children = (
 				9FABA831253C06BF0003E530 /* MCCPlacement (iOS).app */,
 				9FABA842253C06C20003E530 /* MCCPlacementTests.xctest */,
-				9FABA84D253C06C20003E530 /* MCCPlacementUITests.xctest */,
+				9FABA84D253C06C20003E530 /* MCCPlacementiOSUITests.xctest */,
 				9F8837FF256F62EF00888BAC /* MCCPlacement.app */,
 			);
 			name = Products;
@@ -166,13 +166,13 @@
 			path = MCCPlacementTests;
 			sourceTree = "<group>";
 		};
-		9FABA850253C06C20003E530 /* MCCPlacementUITests */ = {
+		9FABA850253C06C20003E530 /* MCCPlacementiOSUITests */ = {
 			isa = PBXGroup;
 			children = (
-				9FABA851253C06C20003E530 /* MCCPlacementUITests.swift */,
+				9FABA851253C06C20003E530 /* MCCPlacementiOSUITests.swift */,
 				9FABA853253C06C20003E530 /* Info.plist */,
 			);
-			path = MCCPlacementUITests;
+			path = MCCPlacementiOSUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,9 +230,9 @@
 			productReference = 9FABA842253C06C20003E530 /* MCCPlacementTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9FABA84C253C06C20003E530 /* MCCPlacementUITests */ = {
+		9FABA84C253C06C20003E530 /* MCCPlacementiOSUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9FABA85C253C06C20003E530 /* Build configuration list for PBXNativeTarget "MCCPlacementUITests" */;
+			buildConfigurationList = 9FABA85C253C06C20003E530 /* Build configuration list for PBXNativeTarget "MCCPlacementiOSUITests" */;
 			buildPhases = (
 				9FABA849253C06C20003E530 /* Sources */,
 				9FABA84A253C06C20003E530 /* Frameworks */,
@@ -243,9 +243,9 @@
 			dependencies = (
 				9FABA84F253C06C20003E530 /* PBXTargetDependency */,
 			);
-			name = MCCPlacementUITests;
+			name = MCCPlacementiOSUITests;
 			productName = MCCPlacementUITests;
-			productReference = 9FABA84D253C06C20003E530 /* MCCPlacementUITests.xctest */;
+			productReference = 9FABA84D253C06C20003E530 /* MCCPlacementiOSUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -286,7 +286,7 @@
 				9FABA830253C06BF0003E530 /* MCCPlacement (iOS) */,
 				9F8837F0256F62EF00888BAC /* MCCPlacement (macOS) */,
 				9FABA841253C06C20003E530 /* MCCPlacementTests */,
-				9FABA84C253C06C20003E530 /* MCCPlacementUITests */,
+				9FABA84C253C06C20003E530 /* MCCPlacementiOSUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -363,7 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FABA852253C06C20003E530 /* MCCPlacementUITests.swift in Sources */,
+				9FABA852253C06C20003E530 /* MCCPlacementiOSUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,9 +657,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.chew.kenneth.MCCPlacementUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MCCPlacement;
+				TEST_TARGET_NAME = "MCCPlacement (iOS)";
 			};
 			name = Debug;
 		};
@@ -677,9 +678,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.chew.kenneth.MCCPlacementUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MCCPlacement;
+				TEST_TARGET_NAME = "MCCPlacement (iOS)";
 			};
 			name = Release;
 		};
@@ -722,7 +724,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9FABA85C253C06C20003E530 /* Build configuration list for PBXNativeTarget "MCCPlacementUITests" */ = {
+		9FABA85C253C06C20003E530 /* Build configuration list for PBXNativeTarget "MCCPlacementiOSUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9FABA85D253C06C20003E530 /* Debug */,
