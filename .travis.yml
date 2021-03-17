@@ -1,0 +1,8 @@
+os: osx
+language: swift
+osx_image: xcode12.2
+xcode_project: MCCPlacement.xcodeproj
+xcode_scheme: MCCPlacement
+xcode_destination: platform=iOS Simulator,OS=14.2,name=iPhone 8
+
+# install: swift package update # install Swift Package Manager dependencies
