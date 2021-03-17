@@ -1,14 +1,14 @@
 //
-//  MCCPlacementTests.swift
-//  MCCPlacementTests
+//  MCCPlacementmacOSTests.swift
+//  MCCPlacementmacOSTests
 //
-//  Created by Kenneth Chew on 10/18/20.
+//  Created by Kenneth Chew on 3/17/21.
 //
 
 import XCTest
-@testable import MCCPlacement
+@testable import MCCPlacement__macOS_
 
-class MCCPlacementTests: XCTestCase {
+class MCCPlacementmacOSTests: XCTestCase {
   
   let sampleTeam = Team(name: "Test", averageScore: 2000.0, averageWins: 0.3, averageTopTen: 0.25)
   
